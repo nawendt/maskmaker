@@ -1,14 +1,16 @@
 from distutils.core import setup
+from maskmaker import __author__, __email__, __version__
+
+dependencies = ['fiona', 'numpy', 'scikit-image', 'scipy', 'shapely']
 
 setup(
     name='maskmaker',
-    version='0.1.0',
+    version=__version__,
     packages=['maskmaker'],
     url='https://github.com/nawendt/maskmaker',
     license='BSD 2-Clause License',
-    author_email='nawendt@ou.edu',
-    author='Nathan Wendt',
+    author_email=__email__,
+    author=__author__,
     description='Create masks for grids using shapefiles',
-    dependency_links=['https://github.com/pmarshwx/pygridder/tarball/master'],
-    install_requires=['pygridder', 'fiona', 'shapely']
+    install_requires=dependencies
 )
