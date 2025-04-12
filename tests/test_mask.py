@@ -15,12 +15,12 @@ def test_mask():
     shp = Path(__file__).parent / 'data' / 'conus.shp'
     grid = Path(__file__).parent / 'data' / 'hrrr_grid.npz'
 
-    with np.load(grid):
-        lat = grid['lat']
-        lon = grid['lon']
+    with np.load(grid) as _grid:
+        lat = _grid['lat']
+        lon = _grid['lon']
 
-    with np.load(ref):
-        ref_mask = ref['mask']
+    with np.load(ref) as _ref:
+        ref_mask = _ref['mask']
 
     test_obj = Mask(lon, lat, shp)
     test_obj.make()
