@@ -1,0 +1,5 @@
+fiona >= 1.8
+numpy >= 2.0
+scipy
+shapely >= 2.0
+scikit-image
